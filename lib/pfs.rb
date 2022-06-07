@@ -1,4 +1,5 @@
-require "pfs/version"
 
-module Pfs
+require "pfs/version"
+require "pfs/client"
+module PFS
 end
