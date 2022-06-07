@@ -2,7 +2,7 @@ require_relative 'lib/pfs/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "pfs"
-  spec.version       = Pfs::VERSION
+  spec.version       = PFS::VERSION
   spec.authors       = ["Aitor García Rey"]
   spec.email         = ["aitor@devengo.com"]
 

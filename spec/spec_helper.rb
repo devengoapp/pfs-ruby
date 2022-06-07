@@ -1,4 +1,5 @@
 require "bundler/setup"
+require "ostruct"
 require "pfs"
 
 RSpec.configure do |config|
