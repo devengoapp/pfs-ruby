@@ -24,6 +24,11 @@ module PFS
       def transactions
         @services[:transactions] ||= API::TransactionsService.new(self)
       end
+
+      def statements
+        @services[:statements] ||= API::StatementsService.new(self)
+      end
     end
   end
 end
+
