@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require "faraday"
+require "securerandom"
+
 # require "faraday_middleware"
 require_relative "api/services"
 require_relative "resources/base"
