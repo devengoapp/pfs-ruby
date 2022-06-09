@@ -5,11 +5,9 @@ module PFS
     class Collection
       include Enumerable
 
-      attr_reader :response
-
-      def initialize(response, item_klass, data)
-        @response = response
-        @items = (data || []).map { |item| item_klass.new(response, item) }
+      def initialize(item_klass, attributes_collection = [])
+        @attributes_collection = attributes_collection
+        @items = attributes_collection.map { |attributes_item| item_klass.new(attributes_item) }
       end
 
       def each(&block)
