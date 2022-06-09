@@ -5,6 +5,7 @@ require_relative "accounts_service"
 require_relative "authentication_service"
 require_relative "transactions_service"
 require_relative "transfers_service"
+require_relative "statements_service"
 
 module PFS
   module API
@@ -31,4 +32,3 @@ module PFS
     end
   end
 end
-
