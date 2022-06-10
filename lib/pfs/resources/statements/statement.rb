@@ -3,52 +3,46 @@
 module PFS
   module Resources
     module Statements
-      class Statement
-        attr_reader :id,
-                    :user_defined_fields,
-                    :debtor_full_name,
-                    :debtor_account_identifier,
-                    :debtor_bank_identifier,
-                    :creditor_full_name,
-                    :creditor_account_identifier,
-                    :creditor_bank_identifier,
-                    :reference
+      class Statement < Base
+        attr_accessor :id,
+                      :transactionId,
+                      :amount,
+                      :cardholderID,
+                      :debtorBankIndentifier,
+                      :debtorAccountIdentifier,
+                      :debtorFullName,
+                      :debtorFullAddress,
+                      :debtorCountryCode,
+                      :creditorBankIdentifier,
+                      :creditorAccountIdentifier,
+                      :creditorFullName,
+                      :creditorFullAddress,
+                      :creditorCountryCode,
+                      :reference,
+                      :dateTimeEntered,
+                      :inwardOutward,
+                      :processorType,
+                      :paymentStatus,
+                      :userDefinedFields
 
-        def self.from_raw(raw_transaction)
-          new(
-            id: raw_transaction[:id],
-            user_defined_fields: raw_transaction[:userDefinedFields],
-            debtor_full_name: raw_transaction[:debtorFullName],
-            debtor_account_identifier: raw_transaction[:debtorAccountIdentifier],
-            debtor_bank_identifier: raw_transaction[:debtorBankIdentifier],
-            creditor_full_name: raw_transaction[:creditorFullName],
-            creditor_account_identifier: raw_transaction[:creditorAccountIdentifier],
-            creditor_bank_identifier: raw_transaction[:creditorBankIdentifier],
-            reference: raw_transaction[:reference]
-          )
-        end
+        alias transaction_id transactionId
+        alias cardholder_id cardholderID
+        alias debtor_bank_identifier debtorBankIndentifier
+        alias debtor_account_identifier debtorAccountIdentifier
+        alias debtor_full_name debtorFullName
+        alias debtor_full_address debtorFullAddress
+        alias debtor_country_code debtorCountryCode
+        alias creditor_bank_identifier creditorBankIdentifier
+        alias creditor_account_identifier creditorAccountIdentifier
+        alias creditor_full_name creditorFullName
+        alias creditor_full_address creditorFullAddress
+        alias creditor_country_code creditorCountryCode
+        alias entered_at dateTimeEntered
+        alias inward_outward inwardOutward
+        alias processor_type processorType
+        alias status paymentStatus
+        alias user_defined_fields userDefinedFields
 
-        def initialize(
-          id:,
-          user_defined_fields:,
-          debtor_full_name:,
-          debtor_account_identifier:,
-          debtor_bank_identifier:,
-          creditor_full_name:,
-          creditor_account_identifier:,
-          creditor_bank_identifier:,
-          reference:
-        )
-          @id = id
-          @user_defined_fields = user_defined_fields
-          @debtor_full_name = debtor_full_name
-          @debtor_account_identifier = debtor_account_identifier
-          @debtor_bank_identifier = debtor_bank_identifier
-          @creditor_full_name = creditor_full_name
-          @creditor_account_identifier = creditor_account_identifier
-          @creditor_bank_identifier = creditor_bank_identifier
-          @reference = reference
-        end
       end
     end
   end

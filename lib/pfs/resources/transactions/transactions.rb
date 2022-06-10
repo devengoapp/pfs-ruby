@@ -3,22 +3,9 @@
 module PFS
   module Resources
     module Transactions
-      class Transactions
-        include Enumerable
-
-        def self.from_raw(raw_transactions)
-          transactions = raw_transactions.map do |transaction|
-            Transaction.from_raw(transaction)
-          end
-          new(transactions)
-        end
-
-        def initialize(transactions)
-          @transactions = transactions
-        end
-
-        def each(&block)
-          @transactions.each(&block)
+      class Transactions < Collection
+        def initialize(attributes_collection)
+          super(Transaction, attributes_collection)
         end
       end
     end

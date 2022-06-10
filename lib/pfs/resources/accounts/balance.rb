@@ -3,7 +3,7 @@
 module PFS
   module Resources
     module Accounts
-      class Balance < Resources::Base
+      class Balance < Base
         attr_accessor :currency,
                       :availableBalance,
                       :ledgerBalance
