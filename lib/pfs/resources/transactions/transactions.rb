@@ -4,8 +4,8 @@ module PFS
   module Resources
     module Transactions
       class Transactions < Collection
-        def initialize(attributes_collection)
-          super(Transaction, attributes_collection)
+        def initialize(response, attributes_collection)
+          super(response, Transaction, attributes_collection)
         end
       end
     end

@@ -3,7 +3,10 @@
 module PFS
   module Resources
     class Base
-      def initialize(attributes = {})
+      attr_reader :response
+
+      def initialize(response, attributes = {})
+        @response = response
         attributes.each do |key, value|
           m = "#{key}=".to_sym
           send(m, value) if respond_to?(m)
