@@ -9,7 +9,7 @@ module PFS
           password: password,
         }
         response = client.post("/Auth/Jwt", attributes, options)
-        Resources::Authentication::Token.new(response.body[:data])
+        Resources::Authentication::Token.new(response, response.body[:data])
       end
     end
   end

@@ -5,7 +5,7 @@ module PFS
     class AccountsService < Service
       def balance(account_id)
         response = client.get("/Account/#{account_id}/Balance")
-        Resources::Accounts::Balance.new(response.body[:data])
+        Resources::Accounts::Balance.new(response, response.body[:data])
       end
 
       def credit(account_id, currency, amount, fee_code = "**API", description = "Deposit To Card API")
@@ -16,7 +16,7 @@ module PFS
           transactionDescription: description,
         }
         response = client.post("/Account/#{account_id}/Balance/Credit", attributes)
-        Resources::Accounts::BalanceCredit.new(response.body[:data])
+        Resources::Accounts::BalanceCredit.new(response, response.body[:data])
       end
     end
   end

@@ -5,7 +5,7 @@ module PFS
         response = client.get(
           "/BankPayment/#{account_id}/StatementById?statementitemid=#{statement_id}&InwardOutward=#{inward_outward}&Processor=#{processor}"
         )
-        Resources::Statements::Statement.new(response.body.dig(:data, :transaction))
+        Resources::Statements::Statement.new(response, response.body.dig(:data, :transaction))
       end
     end
   end

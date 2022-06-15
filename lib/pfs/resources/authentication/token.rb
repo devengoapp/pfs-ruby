@@ -10,8 +10,8 @@ module PFS
         alias access_token accessToken
         alias expires_in expiresIn
 
-        def initialize(response)
-          super(response)
+        def initialize(response, attributes = {})
+          super(response, attributes)
           @expires_on = Time.now + expires_in
         end
 
