@@ -17,8 +17,10 @@ module PFS
 end
 
 require_relative "collection"
+require_relative "accounts/account"
 require_relative "accounts/balance"
 require_relative "accounts/balance_credit"
+require_relative "accounts/status"
 require_relative "authentication/token"
 require_relative "transfers/transfer"
 require_relative "transactions/transaction"
