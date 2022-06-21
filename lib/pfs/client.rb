@@ -58,6 +58,10 @@ module PFS
       execute :post, path, data, options
     end
 
+    def patch(path, data = nil, options = {})
+      execute :patch, path, data, options
+    end
+
     def execute(method, path, data = nil, options = {})
       request(method, path, data, options)
     end
