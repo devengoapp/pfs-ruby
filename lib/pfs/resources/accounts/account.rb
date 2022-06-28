@@ -4,29 +4,16 @@ module PFS
   module Resources
     module Accounts
       class Account < Base
-        attr_accessor :id,
-                      :availableBalance,
-                      :ledgerBalance,
-                      :status,
-                      :expiryDate,
-                      :ddaNumber,
-                      :walletId,
-                      :clientWalletId,
-                      :cardNumber,
-                      :cvv2,
-                      :accountId,
-                      :sequenceCode
+        attr_reader :info,
+                    :holder
 
+        map :currencies, :currencies
 
-        alias available availableBalance
-        alias ledger ledgerBalance
-        alias expiration_date expiryDate
-        alias dda_number ddaNumber
-        alias wallet_id walletId
-        alias client_wallet_id clientWalletId
-        alias card_number cardNumber
-        alias account_id accountId
-        alias sequence_code sequenceCode
+        def initialize(response, attributes = {})
+          super(response, attributes)
+          @holder = AccountHolder.new(response, attributes.dig(:accountInfo, :cardholder))
+          @info = AccountInfo.new(response, attributes.dig(:accountInfo, :card))
+        end
       end
     end
   end
