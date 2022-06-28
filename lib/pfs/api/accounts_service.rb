@@ -8,12 +8,11 @@ module PFS
         Resources::Accounts::Balance.new(response, response.body[:data])
       end
 
-      def issue(bin:, dc:, style: , user_defined2: ,incorporation_date:, company_name:, first_name:, last_name:, address:, postal_code: , city:, state:, country:)
+      def issue(bin:, dc:, style: ,incorporation_date:, company_name:, first_name:, last_name:, address:, postal_code: , city:, state:, country:,  user_defined1: nil, user_defined2: nil, user_defined3: nil, user_defined4: nil)
         attributes = {
           bin: bin,
           distributorcode: dc,
           cardstyle: style,
-          userdefined2: user_defined2,
           companyname: company_name,
           firstname: first_name,
           lastname: last_name,
@@ -24,8 +23,17 @@ module PFS
           zipcode: postal_code,
           countrycode: country,
         }
+        attributes[:userdefined1] = user_defined1 if user_defined1
+        attributes[:userdefined2] = user_defined2 if user_defined2
+        attributes[:userdefined3] = user_defined3 if user_defined3
+        attributes[:userdefined4] = user_defined4 if user_defined4
 
         response = client.post("/Account", attributes)
+        Resources::Accounts::IssuedAccount.new(response, response.body[:data])
+      end
+
+      def info(account_id: )
+        response = client.get("/Account/#{account_id}")
         Resources::Accounts::Account.new(response, response.body[:data])
       end
 
