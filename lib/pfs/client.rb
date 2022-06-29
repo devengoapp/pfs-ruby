@@ -6,6 +6,8 @@ require "securerandom"
 # require "faraday_middleware"
 require_relative "api/services"
 require_relative "resources/base"
+require_relative "resources/errors/response_errors"
+
 module PFS
   class Client
     include PFS::API::Services
@@ -95,7 +97,7 @@ module PFS
 
     def handle_error_response(error)
       puts "ERROR #{error.response}"
-      raise error
+      raise Resources::Errors::ResponseErrors.new(error)
     end
 
     def handle_network_error(error)
