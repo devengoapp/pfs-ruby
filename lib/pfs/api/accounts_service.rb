@@ -8,6 +8,52 @@ module PFS
         Resources::Accounts::Balance.new(response, response.body[:data])
       end
 
+      def issue(bin:, dc:, style: ,incorporation_date:, company_name:, first_name:, last_name:, address:, postal_code: , city:, state:, country:,  user_defined1: nil, user_defined2: nil, user_defined3: nil, user_defined4: nil)
+        attributes = {
+          bin: bin,
+          distributorcode: dc,
+          cardstyle: style,
+          companyname: company_name,
+          firstname: first_name,
+          lastname: last_name,
+          dateofbirth: incorporation_date,
+          address1: address,
+          city: city,
+          county: state,
+          zipcode: postal_code,
+          countrycode: country,
+        }
+        attributes[:userdefined1] = user_defined1 if user_defined1
+        attributes[:userdefined2] = user_defined2 if user_defined2
+        attributes[:userdefined3] = user_defined3 if user_defined3
+        attributes[:userdefined4] = user_defined4 if user_defined4
+
+        response = client.post("/Account", attributes)
+        Resources::Accounts::IssuedAccount.new(response, response.body[:data])
+      end
+
+      def info(account_id: )
+        response = client.get("/Account/#{account_id}")
+        Resources::Accounts::Account.new(response, response.body[:data])
+      end
+
+      def status(account_id: )
+        response = client.get("/Account/#{account_id}/Status")
+        Resources::Accounts::Status.new(response, response.body[:data])
+      end
+
+      def update_status(account_id: , status_code: )
+        attributes = {
+          status: status_code,
+        }
+        client.patch("/Account/#{account_id}/Status", attributes)
+        status(account_id: account_id)
+      end
+
+      def close(account_id: )
+        update_status(account_id: account_id, status_code: PFS::Resources::Accounts::Status::CODES[:closed])
+      end
+
       def credit(account_id, currency, amount, fee_code = "**API", description = "Deposit To Card API")
         attributes = {
           amount: amount,
