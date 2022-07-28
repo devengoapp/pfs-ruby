@@ -18,6 +18,21 @@ module PFS
         response = client.post("/BankPayment/#{account_id}/OneOffPayment", data, options)
         Resources::Transfers::Transfer.new(response, response.body[:data])
       end
+
+      def internal(from_account_id, to_account_id, amount, currency, fee_code, description, terminal_id)
+        data = {
+          id: from_account_id,
+          toId: to_account_id,
+          amount: amount,
+          currencyCode: currency,
+          description: description,
+          feeCode: fee_code,
+          terminalId: terminal_id
+        }
+
+        response = client.post("/Account/CardholderToCardholderTransfer", data)
+        Resources::Transfers::InternalTransfer.new(response, response.body[:data])
+      end
     end
   end
 end
