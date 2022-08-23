@@ -26,4 +26,10 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = ">= 2.5.0"
   spec.add_dependency "faraday", '>= 0.15'
+
+  spec.add_development_dependency "guard", "~> 2.0"
+  spec.add_development_dependency "guard-rspec", "~> 4.0"
+  spec.add_development_dependency "rake", "~> 12.0"
+  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "webmock", "~> 3.0"
 end
