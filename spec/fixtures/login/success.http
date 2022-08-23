@@ -1,0 +1,21 @@
+HTTP/1.1 200 OK
+Date: Tue, 23 Aug 2022 09:20:28 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Cache-Control: max-age=0,no-cache,no-store,must-revalidate
+Pragma: no-cache
+X-Frame-Options: SAMEORIGIN
+Strict-Transport-Security: max-age=2592000; includeSubDomains
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Content-Security-Policy: default-src 'none';img-src 'self' data: *.swagger.io; script-src 'self' 'unsafe-inline';style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'
+Referrer-Policy: same-origin
+Permissions-Policy: accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=()
+CF-Cache-Status: DYNAMIC
+Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Server: cloudflare
+CF-RAY: 73f2c5bf3a277705-LHR
+Content-Encoding: gzip
+
+{"data":{"accessToken":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEZXZlbmdvU1RHQ29ycGV4dGFwaXVzciIsImp0aSI6ImUzNjc2NDBmLWI5ODYtNGY4Mi05NDVlLTNlNGJiMzNjOGRmNiIsImlhdCI6MTY2MTI0NjQyOCwicm9sZV90b2tlbiI6IkFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQVFBa0FBQUFBZ0FJQUVBQUFwQUZBQUFBQUNBQUFBSkFBQUFBQVFBQUFBQUNBQm9BWCIsInN1aWQiOiIyNzY2IiwiY2lkIjoxLCJpcHciOlsiKiIsIjE5Mi4xNjguMTEwLjEzNyJdLCJsaW0iOiIxMDAwMCw2MCIsIm5iZiI6MTY2MTI0NjQyMywiZXhwIjoxNjYxMjQ3MzI4LCJpc3MiOiJQcmVwYWlkRmluYW5jaWFsU2VydmljZXMiLCJhdWQiOiJodHRwczovL3N0YWdpbmctYXBpLnByZXBhaWRmaW5hbmNpYWxzZXJ2aWNlcy5jb20vIn0.GHmUAxHDSWfNKgjfDwlpgRq_jb5j1ZECRZqgNOuQRqITRI0v44Y5RfsHsYdMTjZkL6-pM_DpSSUCslBxby3tDnccQrZk0Y8MaQ30ivRJ3mLhCZrNxRDRVcRguAncjos-ZAcFYaUb_f-ov6PgPfk30I_gAK4yy6aDAfzl5EuW9zvaSXLikMedEDTfDNNPGQ_r25Mb6KUKpwbRucmxCw_K4dnD-iQDPx3hz2KuG-_77mPj4UvHHJboG0u2MkC_sE8ppLZSwSWiNUT2COJGkNQe5KGyv3EsnD7a_589QGGrEqVgAAYJPbUpkdlFtP3LKh9gslv9-XzNtfN_-rg1mJAhhQ","expiresIn":900}}
