@@ -42,7 +42,6 @@ module PFS
         alias processor_type processorType
         alias status paymentStatus
         alias user_defined_fields userDefinedFields
-
       end
     end
   end

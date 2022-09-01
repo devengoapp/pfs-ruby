@@ -1,0 +1,15 @@
+HTTP/1.1 200 OK
+Date: Thu, 01 Sep 2022 15:13:55 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Rate-Limit-Limit: 1000
+X-Rate-Limit-Remaining: 982
+X-Rate-Limit-Reset: 46
+Content-Security-Policy: default-src 'none';img-src 'self' data: *.swagger.io; script-src 'self' 'unsafe-inline';style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'
+CF-Cache-Status: DYNAMIC
+Server: cloudflare
+CF-RAY: 743ef3e0dfe88e12-LHR
+Content-Encoding: gzip
+
+{"data":{"transaction":{"id":16351705,"transactionId":"PFSTXd1a12bd224d7453faeabcd1c5a88ff","amount":0.10,"cardholderID":"200013353686","debtorBankIndentifier":"PFSSESM1","debtorAccountIdentifier":"ES7467130002590013353686","debtorFullName":"ESB95389672 LINKING PATHS","debtorFullAddress":"ARRANDI 33 5C NOTPROVIDED","debtorCountryCode":"ES","creditorBankIdentifier":"CLPEES2MXXX","creditorAccountIdentifier":"ES6930350016560160061541","creditorFullName":"Aitor Garcia","creditorFullAddress":"NOTPROVIDED NOTPROVIDED","creditorCountryCode":"ES","reference":"X17","dateTimeEntered":"2022-09-01T15:12:43.240Z","inwardOutward":1,"processorType":1,"paymentStatus":"ACCP","userDefinedFields":{"key":"value","transfer_external_id":"tra_ca_tra"}}},"referenceId":7282585}
