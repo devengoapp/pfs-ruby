@@ -53,10 +53,10 @@ RSpec.describe PFS::API::TransfersService, :unit, type: :client do
           bankidentifier: "destination_id",
           countrycode: "country",
           currency: "currency",
-          isinstant: true,
           firstname: "first_name",
           lastname: "last_name",
           paymentamount: "amount",
+          isinstant: true,
         })
       end
     end
@@ -73,17 +73,37 @@ RSpec.describe PFS::API::TransfersService, :unit, type: :client do
           bankidentifier: "destination_id",
           countrycode: "country",
           currency: "currency",
-          reference: "reference",
           firstname: "first_name",
           lastname: "last_name",
           paymentamount: "amount",
+          reference: "reference",
+        })
+      end
+    end
+  end
+
+  context "with a user defined fields option" do
+    let(:options) { { user_defined_fields: { key: "value" } } }
+
+    it "sends the reference param" do
+      expect(client).to have_received(:post).once do |param, data|
+        expect(param).to eq "/BankPayment/account_id/OneOffPayment"
+        expect(data).to include({
+          accountidentifier: "destination",
+          bankidentifier: "destination_id",
+          countrycode: "country",
+          currency: "currency",
+          firstname: "first_name",
+          lastname: "last_name",
+          paymentamount: "amount",
+          userdefinedfields: { key: "value" },
         })
       end
     end
   end
 
   context "with a unstructuredreference option" do
-    let(:options) { { unstructuredreference: "unstructuredreference" } }
+    let(:options) { { unstructured_reference: "unstructuredreference" } }
 
     it "sends the unstructuredreference param" do
       expect(client).to have_received(:post).once do |param, data|
@@ -93,10 +113,10 @@ RSpec.describe PFS::API::TransfersService, :unit, type: :client do
           bankidentifier: "destination_id",
           countrycode: "country",
           currency: "currency",
-          unstructuredreference: "unstructuredreference",
           firstname: "first_name",
           lastname: "last_name",
           paymentamount: "amount",
+          unstructuredreference: "unstructuredreference",
         })
       end
     end
