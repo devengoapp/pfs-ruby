@@ -15,6 +15,7 @@ module PFS
         }
         data[:isinstant] = true if options[:instant]
         data[:reference] = options[:reference] if options[:reference]
+        data[:unstructuredreference] = options[:unstructuredreference] if options[:unstructuredreference]
         data[:userdefinedfields] = options[:user_defined_fields] if options[:user_defined_fields]
         response = client.post("/BankPayment/#{account_id}/OneOffPayment", data, options)
         Resources::Transfers::Transfer.new(response, response.body[:data])
@@ -28,7 +29,7 @@ module PFS
           currencyCode: currency,
           description: description,
           feeCode: fee_code,
-          terminalId: terminal_id
+          terminalId: terminal_id,
         }
 
         response = client.post("/Account/CardholderToCardholderTransfer", data)

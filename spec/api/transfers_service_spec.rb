@@ -62,7 +62,7 @@ RSpec.describe PFS::API::TransfersService, :unit, type: :client do
     end
   end
 
-  context "with a referece option" do
+  context "with a reference option" do
     let(:options) { { reference: "reference" } }
 
     it "sends the reference param" do
@@ -74,6 +74,26 @@ RSpec.describe PFS::API::TransfersService, :unit, type: :client do
           countrycode: "country",
           currency: "currency",
           reference: "reference",
+          firstname: "first_name",
+          lastname: "last_name",
+          paymentamount: "amount",
+        })
+      end
+    end
+  end
+
+  context "with a unstructuredreference option" do
+    let(:options) { { unstructuredreference: "unstructuredreference" } }
+
+    it "sends the unstructuredreference param" do
+      expect(client).to have_received(:post).once do |param, data|
+        expect(param).to eq "/BankPayment/account_id/OneOffPayment"
+        expect(data).to include({
+          accountidentifier: "destination",
+          bankidentifier: "destination_id",
+          countrycode: "country",
+          currency: "currency",
+          unstructuredreference: "unstructuredreference",
           firstname: "first_name",
           lastname: "last_name",
           paymentamount: "amount",
