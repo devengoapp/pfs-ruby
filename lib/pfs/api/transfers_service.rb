@@ -15,7 +15,7 @@ module PFS
         }
         data[:isinstant] = true if options[:instant]
         data[:reference] = options[:reference] if options[:reference]
-        data[:unstructuredreference] = options[:unstructuredreference] if options[:unstructuredreference]
+        data[:unstructuredreference] = options[:unstructured_reference] if options[:unstructured_reference]
         data[:userdefinedfields] = options[:user_defined_fields] if options[:user_defined_fields]
         response = client.post("/BankPayment/#{account_id}/OneOffPayment", data, options)
         Resources::Transfers::Transfer.new(response, response.body[:data])
