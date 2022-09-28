@@ -49,7 +49,7 @@ module PFS
                       :walletId
 
         alias available availableBalance
-        alias ledger availableBalance
+        alias ledger ledgerBalance
         alias transaction_origin transactionOrigin
         alias transaction_type transactionType
         alias transaction_description transactionDescription
