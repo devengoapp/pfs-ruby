@@ -64,7 +64,7 @@ RSpec.describe PFS::API::StatementsService do
   end
 
   describe "history" do
-    context "with a valid date" do
+    context "with valid dates" do
       let(:start_date) { "2022-01-01" }
       let(:end_date) { "2022-01-02" }
       let(:statements) { statements_service.history(account_id: account_id, start_date: start_date, end_date: end_date, inward_outward: inward_outward, processor: processor) }
@@ -100,13 +100,13 @@ RSpec.describe PFS::API::StatementsService do
       end
     end
 
-    context "with an invalid date" do
+    context "with invalid dates" do
       let(:start_date) { "FAKE" }
       let(:end_date) { "FAKE" }
 
       before do
         stub_request(:post, %r{/finac/api/Auth/Jwt$}).to_return(read_http_fixture("login/success.http"))
-        stub_request(:get, %r{/Statement}).to_return(read_http_fixture("statements/history/invalid_date.http"))
+        stub_request(:get, %r{/Statement}).to_return(read_http_fixture("statements/history/invalid_dates.http"))
       end
 
       it "raises an error" do

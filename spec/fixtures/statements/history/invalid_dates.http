@@ -11,4 +11,4 @@ CF-Cache-Status: DYNAMIC
 Server: cloudflare
 CF-RAY: 743f1c0e091774dd-LHR
 
-{"errors":[{"status":400,"code":"BSIE","alternativeErrorCode":"-2","detail":"Cardholder Id and Statement Id do not match."}],"referenceId":7282695}
+{"errors":[{"status":400,"code":"BSIE","alternativeErrorCode":"-2","detail":"Date is invalid."}],"referenceId":7282695}
