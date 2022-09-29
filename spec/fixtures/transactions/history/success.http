@@ -1,0 +1,69 @@
+HTTP/1.1 200 OK
+Date: Thu, 01 Sep 2022 15:13:55 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Rate-Limit-Limit: 1000
+X-Rate-Limit-Remaining: 982
+X-Rate-Limit-Reset: 46
+Content-Security-Policy: default-src 'none';img-src 'self' data: *.swagger.io; script-src 'self' 'unsafe-inline';style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'
+CF-Cache-Status: DYNAMIC
+Server: cloudflare
+CF-RAY: 743ef3e0dfe88e12-LHR
+Content-Encoding: gzip
+
+{
+  "data": {
+    "transactions": [
+      {
+        "date": "DATE",
+        "transactionType": "TRANSACTION_TYPE",
+        "cardType": "CARD_TYPE",
+        "mti": "MTI",
+        "arn": "ARN",
+        "stn": "STN",
+        "authenticationNumber": "AUTHENTICATION_NUMBER",
+        "recordType": "RECORD_TYPE",
+        "transactionOrigin": "TRANSACTION_ORIGIN",
+        "transactionDescription": "TRANSACTION_DESCRIPTION",
+        "amount": "AMOUNT",
+        "fee": "FEE",
+        "availableBalance": "AVAILABLE_BALANCE",
+        "ledgerBalance": "LEDGER_BALANCE",
+        "clientId": "CLIENT_ID",
+        "terminalID": "TERMINAL_ID",
+        "terminalLocation": "TERMINAL_LOCATION",
+        "terminalOwner": "TERMINAL_OWNER",
+        "terminalCity": "TERMINAL_CITY",
+        "terminalState": "TERMINAL_STATE",
+        "terminalCountry": "TERMINAL_COUNTRY",
+        "terminalCurrency": "TERMINAL_CURRENCY",
+        "mcc": "MCC",
+        "surcharge": "SURCHARGE",
+        "issuerFee": "ISSUER_FEE",
+        "responseCode": "RESPONSE_CODE",
+        "foreignExchangeFee": "FOREIGN_EXCHANGE_FEE",
+        "currency": "CURRENCY",
+        "transactionCodeDescription": "TRANSACTION_CODE_DESCRIPTION",
+        "transactionResult": "TRANSACTION_RESULT",
+        "originalTransactionAmount": "ORIGINAL_TRANSACTION_AMOUNT",
+        "conversionRate": 0,
+        "originalHoldAmount": "ORIGINAL_HOLD_AMOUNT",
+        "cardAcceptorIdCode": "CARD_ACCEPTOR_ID_CODE",
+        "actionCodeDescription": "ACTION_CODE_DESCRIPTION",
+        "acquiringInstitution": "ACQUIRING_INSTITUTION",
+        "processor": "PROCESSOR",
+        "posEntryMode": "POS_ENTRY_MODE",
+        "atmFee": "ATM_FEE",
+        "walletProvider": "WALLET_PROVIDER",
+        "cardId": "CARD_ID",
+        "walletId": "WALLET_ID",
+        "uniqueReference": "UNIQUE_REFERENCE"
+      }
+    ],
+    "apiVersion": 0,
+    "mainCurrency": "string",
+    "transactionCount": 0
+  },
+  "referenceId": 0
+}
