@@ -1,0 +1,13 @@
+### Increase balance
+POST {{host}}/Account/{{account_id}}/Balance/Credit
+Content-Type: application/json
+F-Message-Id: {{$uuid}}
+F-Origin: {{origin}}
+Authorization: Bearer {{pfs_auth_token}}
+
+{
+  "amount": 200,
+  "currencyCode": "EUR",
+  "transactionDescription": "Deposit To Card API",
+  "feeCode": "**WDB"
+}

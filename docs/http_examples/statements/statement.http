@@ -1,0 +1,6 @@
+### Get statement
+GET {{host}}/BankPayment/{{account_id}}/StatementById?StatementItemId=143301&InwardOutward=1&Processor=1
+Content-Type: application/json
+F-Message-Id: {{$uuid}}
+F-Origin: {{origin}}
+Authorization: Bearer {{pfs_auth_token}}

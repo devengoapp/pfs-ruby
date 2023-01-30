@@ -1,0 +1,16 @@
+### Post internal statement
+POST {{host}}/Account/CardholderToCardholderTransfer
+Content-Type: application/json
+F-Message-Id: {{$uuid}}
+F-Origin: {{origin}}
+Authorization: Bearer {{pfs_auth_token}}
+
+{
+  "id": "400001726270",
+  "toId": "400001726271",
+  "amount": 0.01,
+  "currencyCode": "EUR",
+  "description": "Card To Card Transfer",
+  "feeCode": "**WTR",
+  "terminalId": "DWW NWzKhzncvyYvmK4d"
+}

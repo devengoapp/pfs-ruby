@@ -1,0 +1,6 @@
+### Get statements history
+GET {{host}}/BankPayment/{{account_id}}/Statement?StartDate=2022-03-01&EndDate=2022-06-07&InwardOutward=2&Processor=1
+Content-Type: application/json
+F-Message-Id: {{$uuid}}
+F-Origin: {{origin}}
+Authorization: Bearer {{pfs_auth_token}}

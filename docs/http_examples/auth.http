@@ -1,0 +1,14 @@
+### Auth
+POST {{host}}/Auth/Jwt/
+Content-Type: application/json
+F-Message-Id: {{$uuid}}
+F-Origin: {{origin}}
+
+{
+  "username": "{{username}}",
+  "password": "{{password}}"
+}
+
+> {%
+    client.global.set("pfs_auth_token", response.body.data.accessToken);
+%}
