@@ -13,8 +13,6 @@ module PFS
         }
         Resources::Validations::Bic.new(validation, attributes)
       end
-
-      def instanct(bic:); end
     end
   end
 end
