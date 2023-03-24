@@ -6,6 +6,7 @@ require_relative "authentication_service"
 require_relative "transactions_service"
 require_relative "transfers_service"
 require_relative "statements_service"
+require_relative "validations_service"
 
 module PFS
   module API
@@ -28,6 +29,10 @@ module PFS
 
       def statements
         @services[:statements] ||= API::StatementsService.new(self)
+      end
+
+      def validations
+        @services[:validations] ||= API::ValidationsService.new(self)
       end
     end
   end
