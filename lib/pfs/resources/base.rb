@@ -25,6 +25,7 @@ module PFS
 end
 
 require_relative "collection"
+require_relative "sanitizer"
 require_relative "accounts/issued_account"
 require_relative "accounts/account"
 require_relative "accounts/account_info"

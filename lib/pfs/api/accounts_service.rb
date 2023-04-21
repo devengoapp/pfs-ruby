@@ -13,15 +13,15 @@ module PFS
           bin: bin,
           distributorcode: dc,
           cardstyle: style,
-          companyname: company_name,
-          firstname: first_name,
-          lastname: last_name,
+          companyname: sanitize(company_name),
+          firstname: sanitize(first_name),
+          lastname: sanitize(last_name),
           dateofbirth: incorporation_date,
-          address1: address,
-          city: city,
-          county: state,
+          address1: sanitize(address),
+          city: sanitize(city),
+          county: sanitize(state),
           zipcode: postal_code,
-          countrycode: country,
+          countrycode: sanitize(country),
         }
         attributes[:userdefined1] = user_defined1 if user_defined1
         attributes[:userdefined2] = user_defined2 if user_defined2
@@ -63,6 +63,11 @@ module PFS
         }
         response = client.post("/Account/#{account_id}/Balance/Credit", attributes)
         Resources::Accounts::BalanceCredit.new(response, response.body[:data])
+      end
+
+      private def sanitize(str)
+        sanitizer = Resources::Sanitizer.new
+        sanitizer.invoke(str)
       end
     end
   end
