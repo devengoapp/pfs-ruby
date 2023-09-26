@@ -82,7 +82,7 @@ RSpec.describe PFS::API::TransactionsService do
                             start_date: start_date,
                             end_date: end_date)
         end
-        expected.to raise_error(Faraday::Error)
+        expected.to raise_error(PFS::ClientError)
       end
     end
   end
