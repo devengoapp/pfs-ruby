@@ -8,7 +8,7 @@ module PFS
 
       def initialize(response, item_klass, attributes_collection = [])
         @response = response
-        @attributes_collection = attributes_collection
+        @attributes_collection = attributes_collection || []
         @items = attributes_collection.map { |attributes_item| item_klass.new(nil, attributes_item) }
       end
 
