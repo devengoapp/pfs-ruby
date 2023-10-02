@@ -87,23 +87,12 @@ module PFS
     def handle_request_error(error)
       case error
       when Faraday::ClientError
-        if error.response
-          handle_error_response(error)
-        else
-          handle_network_error(error)
-        end
+        raise ClientError, error
+      when Faraday::ServerError
+        raise ServerError, error
       else
-        raise error
+        raise Error, error
       end
-    end
-
-    def handle_error_response(error)
-      puts "ERROR #{error.response}"
-      raise error
-    end
-
-    def handle_network_error(error)
-      raise error
     end
 
     def login_path?(path)

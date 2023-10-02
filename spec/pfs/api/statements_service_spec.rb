@@ -54,7 +54,7 @@ RSpec.describe PFS::API::StatementsService do
                            inward_outward: inward_outward,
                            processor: processor)
         end
-        expected.to raise_error(Faraday::Error)
+        expected.to raise_error(PFS::ClientError)
       end
     end
   end
@@ -113,7 +113,7 @@ RSpec.describe PFS::API::StatementsService do
                            inward_outward: inward_outward,
                            processor: processor)
         end
-        expected.to raise_error(Faraday::Error)
+        expected.to raise_error(PFS::ClientError)
       end
     end
   end
