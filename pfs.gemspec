@@ -3,8 +3,8 @@ require_relative 'lib/pfs/version'
 Gem::Specification.new do |spec|
   spec.name          = "pfs"
   spec.version       = PFS::VERSION
-  spec.authors       = ["Aitor García Rey"]
-  spec.email         = ["aitor@devengo.com"]
+  spec.authors       = ["Aitor García Rey", "Carlos López", "Iván Guardado", "Nacho Ortiz"]
+  spec.email         = ["aitor@devengo.com", "carlos@devengo.com","ivan@devengo.com","nacho@devengo.com"]
 
   spec.summary       = %q{PFS Finac API ruby client}
   spec.description   = %q{A ruby client to consume PFS Finac API}
