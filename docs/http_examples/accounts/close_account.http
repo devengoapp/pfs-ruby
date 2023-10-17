@@ -1,0 +1,10 @@
+### Close account
+PATCH {{host}}/Account/{{account_id}}/Status
+Content-Type: application/json
+F-Message-Id: {{$uuid}}
+F-Origin: {{origin}}
+Authorization: Bearer {{pfs_auth_token}}
+
+{
+  "status": "9"
+}

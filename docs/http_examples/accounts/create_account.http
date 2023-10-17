@@ -1,0 +1,22 @@
+### Create account
+POST {{host}}/Account/
+Content-Type: application/json
+F-Message-Id: {{$uuid}}
+F-Origin: {{origin}}
+Authorization: Bearer {{pfs_auth_token}}
+
+{
+  "bin": {{bin}},
+  "distributorCode": {{distributor_code}},
+  "cardStyle": "01",
+  "userDefined2": "2",
+  "companyName": "DEVENGO S.L.",
+  "firstName": "B88353412",
+  "lastName": "DEVENGO S.L.",
+  "dateOfBirth": "2019-03-22",
+  "address1": "Calle Barquillo 40 1DCH",
+  "city": "Madrid",
+  "county": "Madrid",
+  "zipCode": "28004",
+  "countryCode": "ES"
+}

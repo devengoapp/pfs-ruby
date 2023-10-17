@@ -1,0 +1,22 @@
+### Post statement
+POST {{host}}/BankPayment/400002177533/OneOffPayment
+Content-Type: application/json
+F-Message-Id: {{$uuid}}
+F-Origin: {{origin}}
+Authorization: Bearer {{pfs_auth_token}}
+
+{
+  "currency": "EUR",
+  "paymentAmount": 0.1,
+  "accountIdentifier": "ES5367130002550001593786",
+  "bankIdentifier": "BSCHESMMXXX",
+  "countryCode": "ES",
+  "firstName": "Name",
+  "lastName": "Lastname",
+  "userDefinedFields": {
+    "field1": "contentField1",
+    "field2": "contentField2"
+  },
+  "isInstant": true,
+  "reference": "devengo reference"
+}
